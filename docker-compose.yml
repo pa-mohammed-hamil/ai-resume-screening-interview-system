@@ -1,0 +1,371 @@
+services:
+
+  # ============================================================
+  # PostgreSQL
+  # ============================================================
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: ai-recruiter-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ai_recruiter}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-ai_recruiter}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Redis
+  # ============================================================
+
+  redis:
+    image: redis:7-alpine
+    container_name: ai-recruiter-redis
+    restart: unless-stopped
+
+    command: redis-server --appendonly yes
+
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+
+    volumes:
+      - redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # FastAPI Backend
+  # ============================================================
+
+  backend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/backend.Dockerfile
+
+    container_name: ai-recruiter-backend
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DEBUG: ${DEBUG:-true}
+
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-ai_recruiter}
+
+      REDIS_URL: redis://redis:6379/0
+
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+
+      STORAGE_ROOT: /app/storage
+
+      RESUME_STORAGE_PATH: /app/storage/resumes
+      GENERATED_RESUME_STORAGE_PATH: /app/storage/generated_resumes
+      INTERVIEW_AUDIO_STORAGE_PATH: /app/storage/interview_audio
+      INTERVIEW_REPORT_STORAGE_PATH: /app/storage/interview_reports
+      TEMPORARY_STORAGE_PATH: /app/storage/temporary
+
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+
+    volumes:
+      - ./backend:/app/backend
+      - ./ai:/app/ai
+      - ./genai:/app/genai
+      - ./interview_engine:/app/interview_engine
+      - ./data:/app/data
+      - ./storage:/app/storage
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    command:
+      [
+        "uvicorn",
+        "backend.app.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ]
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Celery Worker
+  # ============================================================
+
+  worker:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/worker.Dockerfile
+
+    container_name: ai-recruiter-worker
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-ai_recruiter}
+
+      REDIS_URL: redis://redis:6379/0
+
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+
+      STORAGE_ROOT: /app/storage
+
+      RESUME_STORAGE_PATH: /app/storage/resumes
+      GENERATED_RESUME_STORAGE_PATH: /app/storage/generated_resumes
+      INTERVIEW_AUDIO_STORAGE_PATH: /app/storage/interview_audio
+      INTERVIEW_REPORT_STORAGE_PATH: /app/storage/interview_reports
+      TEMPORARY_STORAGE_PATH: /app/storage/temporary
+
+    volumes:
+      - ./backend:/app/backend
+      - ./ai:/app/ai
+      - ./genai:/app/genai
+      - ./interview_engine:/app/interview_engine
+      - ./data:/app/data
+      - ./storage:/app/storage
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    command:
+      [
+        "celery",
+        "-A",
+        "backend.app.workers.celery_app",
+        "worker",
+        "--loglevel=info"
+      ]
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Celery Beat
+  # ============================================================
+
+  beat:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/worker.Dockerfile
+
+    container_name: ai-recruiter-beat
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-ai_recruiter}
+
+      CELERY_BROKER_URL: redis://redis:6379/1
+      CELERY_RESULT_BACKEND: redis://redis:6379/2
+
+    volumes:
+      - ./backend:/app/backend
+      - ./ai:/app/ai
+      - ./genai:/app/genai
+      - ./interview_engine:/app/interview_engine
+      - ./storage:/app/storage
+
+    depends_on:
+      redis:
+        condition: service_healthy
+
+    command:
+      [
+        "celery",
+        "-A",
+        "backend.app.workers.celery_app",
+        "beat",
+        "--loglevel=info"
+      ]
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Frontend
+  # ============================================================
+
+  frontend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/frontend.Dockerfile
+
+    container_name: ai-recruiter-frontend
+    restart: unless-stopped
+
+    ports:
+      - "${FRONTEND_PORT:-5500}:80"
+
+    depends_on:
+      - backend
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Nginx Reverse Proxy
+  # ============================================================
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: ai-recruiter-nginx
+    restart: unless-stopped
+
+    ports:
+      - "${NGINX_HTTP_PORT:-80}:80"
+
+    volumes:
+      - ./infrastructure/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./infrastructure/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+    depends_on:
+      - frontend
+      - backend
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Prometheus
+  # ============================================================
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: ai-recruiter-prometheus
+    restart: unless-stopped
+
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+
+    volumes:
+      - ./infrastructure/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+
+    networks:
+      - ai-recruiter-network
+
+
+  # ============================================================
+  # Grafana
+  # ============================================================
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: ai-recruiter-grafana
+    restart: unless-stopped
+
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+    depends_on:
+      - prometheus
+
+    networks:
+      - ai-recruiter-network
+
+
+# ================================================================
+# Persistent Volumes
+# ================================================================
+
+volumes:
+
+  postgres_data:
+    name: ai-recruiter-postgres-data
+
+  redis_data:
+    name: ai-recruiter-redis-data
+
+  prometheus_data:
+    name: ai-recruiter-prometheus-data
+
+  grafana_data:
+    name: ai-recruiter-grafana-data
+
+
+# ================================================================
+# Network
+# ================================================================
+
+networks:
+
+  ai-recruiter-network:
+    name: ai-recruiter-network
+    driver: bridge
