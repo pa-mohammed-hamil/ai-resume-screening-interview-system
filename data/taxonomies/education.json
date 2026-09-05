@@ -1,0 +1,233 @@
+{
+  "version": "1.0",
+  "education_levels": [
+    {
+      "id": "high_school",
+      "name": "High School",
+      "aliases": [
+        "10th",
+        "12th",
+        "SSC",
+        "HSC",
+        "Higher Secondary",
+        "Secondary School",
+        "Senior Secondary"
+      ]
+    },
+    {
+      "id": "diploma",
+      "name": "Diploma",
+      "aliases": [
+        "Diploma",
+        "Polytechnic",
+        "Technical Diploma",
+        "Diploma in Engineering"
+      ]
+    },
+    {
+      "id": "associate",
+      "name": "Associate Degree",
+      "aliases": [
+        "Associate Degree",
+        "Associate of Arts",
+        "Associate of Science",
+        "AA",
+        "AS"
+      ]
+    },
+    {
+      "id": "bachelor",
+      "name": "Bachelor's Degree",
+      "aliases": [
+        "Bachelor",
+        "Bachelor's",
+        "Bachelors",
+        "Undergraduate",
+        "UG",
+        "Graduation"
+      ]
+    },
+    {
+      "id": "master",
+      "name": "Master's Degree",
+      "aliases": [
+        "Master",
+        "Master's",
+        "Masters",
+        "Postgraduate",
+        "PG",
+        "Post Graduation"
+      ]
+    },
+    {
+      "id": "mba",
+      "name": "Master of Business Administration",
+      "aliases": [
+        "MBA",
+        "Master of Business Administration"
+      ]
+    },
+    {
+      "id": "mca",
+      "name": "Master of Computer Applications",
+      "aliases": [
+        "MCA",
+        "Master of Computer Applications"
+      ]
+    },
+    {
+      "id": "phd",
+      "name": "Doctorate",
+      "aliases": [
+        "PhD",
+        "Ph.D.",
+        "Doctorate",
+        "Doctor of Philosophy",
+        "Doctoral Degree"
+      ]
+    },
+    {
+      "id": "postdoctoral",
+      "name": "Postdoctoral",
+      "aliases": [
+        "Postdoc",
+        "Postdoctoral",
+        "Post-Doctoral"
+      ]
+    }
+  ],
+  "degrees": [
+    {
+      "id": "btech",
+      "name": "Bachelor of Technology",
+      "level": "bachelor",
+      "aliases": [
+        "B.Tech",
+        "BTech",
+        "Bachelor of Technology"
+      ]
+    },
+    {
+      "id": "be",
+      "name": "Bachelor of Engineering",
+      "level": "bachelor",
+      "aliases": [
+        "B.E.",
+        "BE",
+        "Bachelor of Engineering"
+      ]
+    },
+    {
+      "id": "bsc",
+      "name": "Bachelor of Science",
+      "level": "bachelor",
+      "aliases": [
+        "B.Sc",
+        "BSc",
+        "Bachelor of Science"
+      ]
+    },
+    {
+      "id": "bca",
+      "name": "Bachelor of Computer Applications",
+      "level": "bachelor",
+      "aliases": [
+        "BCA",
+        "Bachelor of Computer Applications"
+      ]
+    },
+    {
+      "id": "ba",
+      "name": "Bachelor of Arts",
+      "level": "bachelor",
+      "aliases": [
+        "B.A.",
+        "BA",
+        "Bachelor of Arts"
+      ]
+    },
+    {
+      "id": "bba",
+      "name": "Bachelor of Business Administration",
+      "level": "bachelor",
+      "aliases": [
+        "BBA",
+        "Bachelor of Business Administration"
+      ]
+    },
+    {
+      "id": "mtech",
+      "name": "Master of Technology",
+      "level": "master",
+      "aliases": [
+        "M.Tech",
+        "MTech",
+        "Master of Technology"
+      ]
+    },
+    {
+      "id": "me",
+      "name": "Master of Engineering",
+      "level": "master",
+      "aliases": [
+        "M.E.",
+        "ME",
+        "Master of Engineering"
+      ]
+    },
+    {
+      "id": "msc",
+      "name": "Master of Science",
+      "level": "master",
+      "aliases": [
+        "M.Sc",
+        "MSc",
+        "Master of Science"
+      ]
+    },
+    {
+      "id": "ma",
+      "name": "Master of Arts",
+      "level": "master",
+      "aliases": [
+        "M.A.",
+        "MA",
+        "Master of Arts"
+      ]
+    },
+    {
+      "id": "ms",
+      "name": "Master of Science",
+      "level": "master",
+      "aliases": [
+        "MS",
+        "M.S.",
+        "Master of Science"
+      ]
+    }
+  ],
+  "fields_of_study": [
+    "Computer Science",
+    "Computer Engineering",
+    "Information Technology",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Data Science",
+    "Software Engineering",
+    "Electrical Engineering",
+    "Electronics Engineering",
+    "Mechanical Engineering",
+    "Civil Engineering",
+    "Business Administration",
+    "Finance",
+    "Accounting",
+    "Economics",
+    "Mathematics",
+    "Statistics",
+    "Physics",
+    "Chemistry",
+    "Biology",
+    "Cybersecurity",
+    "Information Systems"
+  ]
+}

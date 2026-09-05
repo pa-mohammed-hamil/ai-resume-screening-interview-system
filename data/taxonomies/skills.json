@@ -1,0 +1,724 @@
+{
+  "version": "1.0",
+  "skills": [
+    {
+      "id": "python",
+      "name": "Python",
+      "category": "Programming Languages",
+      "subcategory": "General Purpose",
+      "aliases": ["Python", "Python3", "Python 3"],
+      "related_skills": ["django", "fastapi", "flask", "pandas", "numpy"]
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "category": "Programming Languages",
+      "subcategory": "General Purpose",
+      "aliases": ["Java", "Java SE", "Java EE"],
+      "related_skills": ["spring", "spring_boot", "maven", "gradle"]
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "category": "Programming Languages",
+      "subcategory": "Web",
+      "aliases": ["JavaScript", "Javascript", "JS", "ECMAScript"],
+      "related_skills": ["typescript", "react", "nodejs"]
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "category": "Programming Languages",
+      "subcategory": "Web",
+      "aliases": ["TypeScript", "TS"],
+      "related_skills": ["javascript", "react", "angular", "nodejs"]
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "category": "Programming Languages",
+      "subcategory": "Systems",
+      "aliases": ["C++", "CPP", "C Plus Plus"],
+      "related_skills": ["algorithms", "data_structures", "stl"]
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "category": "Programming Languages",
+      "subcategory": "Systems",
+      "aliases": ["C", "C Language"],
+      "related_skills": ["cpp", "data_structures", "algorithms"]
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "category": "Programming Languages",
+      "subcategory": "Backend",
+      "aliases": ["Go", "Golang"],
+      "related_skills": ["microservices", "docker", "kubernetes"]
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "category": "Programming Languages",
+      "subcategory": "Systems",
+      "aliases": ["Rust", "Rustlang"],
+      "related_skills": ["systems_programming", "memory_management"]
+    },
+
+    {
+      "id": "data_structures",
+      "name": "Data Structures",
+      "category": "Computer Science",
+      "subcategory": "Algorithms",
+      "aliases": ["Data Structures", "DS", "DSA"],
+      "related_skills": ["algorithms", "problem_solving"]
+    },
+    {
+      "id": "algorithms",
+      "name": "Algorithms",
+      "category": "Computer Science",
+      "subcategory": "Algorithms",
+      "aliases": ["Algorithms", "Algorithm Design", "DSA"],
+      "related_skills": ["data_structures", "problem_solving"]
+    },
+    {
+      "id": "object_oriented_programming",
+      "name": "Object-Oriented Programming",
+      "category": "Computer Science",
+      "subcategory": "Programming",
+      "aliases": ["OOP", "Object Oriented Programming", "Object-Oriented Design"],
+      "related_skills": ["design_patterns", "java", "cpp", "python"]
+    },
+    {
+      "id": "system_design",
+      "name": "System Design",
+      "category": "Computer Science",
+      "subcategory": "Architecture",
+      "aliases": ["System Design", "Software Architecture", "Distributed Systems Design"],
+      "related_skills": ["distributed_systems", "microservices", "scalability"]
+    },
+    {
+      "id": "distributed_systems",
+      "name": "Distributed Systems",
+      "category": "Computer Science",
+      "subcategory": "Systems",
+      "aliases": ["Distributed Systems", "Distributed Computing"],
+      "related_skills": ["microservices", "kafka", "redis", "system_design"]
+    },
+
+    {
+      "id": "html",
+      "name": "HTML",
+      "category": "Frontend",
+      "subcategory": "Web",
+      "aliases": ["HTML", "HTML5"],
+      "related_skills": ["css", "javascript"]
+    },
+    {
+      "id": "css",
+      "name": "CSS",
+      "category": "Frontend",
+      "subcategory": "Web",
+      "aliases": ["CSS", "CSS3", "Cascading Style Sheets"],
+      "related_skills": ["html", "javascript"]
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "category": "Frontend",
+      "subcategory": "Framework",
+      "aliases": ["React", "React.js", "ReactJS"],
+      "related_skills": ["javascript", "typescript", "nextjs"]
+    },
+    {
+      "id": "angular",
+      "name": "Angular",
+      "category": "Frontend",
+      "subcategory": "Framework",
+      "aliases": ["Angular", "AngularJS"],
+      "related_skills": ["typescript", "javascript"]
+    },
+    {
+      "id": "vue",
+      "name": "Vue.js",
+      "category": "Frontend",
+      "subcategory": "Framework",
+      "aliases": ["Vue", "Vue.js", "VueJS"],
+      "related_skills": ["javascript", "typescript"]
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "category": "Frontend",
+      "subcategory": "Framework",
+      "aliases": ["Next.js", "NextJS", "Next"],
+      "related_skills": ["react", "typescript", "nodejs"]
+    },
+
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "category": "Backend",
+      "subcategory": "Runtime",
+      "aliases": ["Node.js", "NodeJS", "Node"],
+      "related_skills": ["javascript", "typescript", "express"]
+    },
+    {
+      "id": "fastapi",
+      "name": "FastAPI",
+      "category": "Backend",
+      "subcategory": "Python Framework",
+      "aliases": ["FastAPI", "Fast API"],
+      "related_skills": ["python", "rest_api", "pydantic"]
+    },
+    {
+      "id": "django",
+      "name": "Django",
+      "category": "Backend",
+      "subcategory": "Python Framework",
+      "aliases": ["Django", "Django Framework"],
+      "related_skills": ["python", "rest_api", "postgresql"]
+    },
+    {
+      "id": "flask",
+      "name": "Flask",
+      "category": "Backend",
+      "subcategory": "Python Framework",
+      "aliases": ["Flask", "Flask Framework"],
+      "related_skills": ["python", "rest_api"]
+    },
+    {
+      "id": "rest_api",
+      "name": "REST API",
+      "category": "Backend",
+      "subcategory": "API",
+      "aliases": ["REST API", "REST APIs", "RESTful API", "REST"],
+      "related_skills": ["http", "fastapi", "django", "flask"]
+    },
+    {
+      "id": "graphql",
+      "name": "GraphQL",
+      "category": "Backend",
+      "subcategory": "API",
+      "aliases": ["GraphQL", "Graph QL"],
+      "related_skills": ["api_design", "nodejs"]
+    },
+    {
+      "id": "microservices",
+      "name": "Microservices",
+      "category": "Backend",
+      "subcategory": "Architecture",
+      "aliases": ["Microservices", "Microservice Architecture"],
+      "related_skills": ["docker", "kubernetes", "distributed_systems"]
+    },
+
+    {
+      "id": "sql",
+      "name": "SQL",
+      "category": "Databases",
+      "subcategory": "Relational",
+      "aliases": ["SQL", "Structured Query Language"],
+      "related_skills": ["postgresql", "mysql", "database_design"]
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "category": "Databases",
+      "subcategory": "Relational",
+      "aliases": ["PostgreSQL", "Postgres", "PostgresSQL"],
+      "related_skills": ["sql", "database_design"]
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL",
+      "category": "Databases",
+      "subcategory": "Relational",
+      "aliases": ["MySQL", "My SQL"],
+      "related_skills": ["sql", "database_design"]
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "category": "Databases",
+      "subcategory": "NoSQL",
+      "aliases": ["MongoDB", "Mongo", "Mongo DB"],
+      "related_skills": ["nosql", "database_design"]
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "category": "Databases",
+      "subcategory": "Caching",
+      "aliases": ["Redis", "Redis Cache"],
+      "related_skills": ["caching", "celery", "distributed_systems"]
+    },
+    {
+      "id": "vector_database",
+      "name": "Vector Database",
+      "category": "Databases",
+      "subcategory": "AI Infrastructure",
+      "aliases": ["Vector Database", "Vector DB", "Vector Store"],
+      "related_skills": ["embeddings", "rag"]
+    },
+    {
+      "id": "pinecone",
+      "name": "Pinecone",
+      "category": "Databases",
+      "subcategory": "Vector Database",
+      "aliases": ["Pinecone"],
+      "related_skills": ["vector_database", "embeddings", "rag"]
+    },
+    {
+      "id": "chroma",
+      "name": "Chroma",
+      "category": "Databases",
+      "subcategory": "Vector Database",
+      "aliases": ["Chroma", "ChromaDB", "Chroma DB"],
+      "related_skills": ["vector_database", "embeddings", "rag"]
+    },
+
+    {
+      "id": "machine_learning",
+      "name": "Machine Learning",
+      "category": "AI/ML",
+      "subcategory": "Machine Learning",
+      "aliases": ["Machine Learning", "ML"],
+      "related_skills": ["deep_learning", "scikit_learn", "feature_engineering"]
+    },
+    {
+      "id": "deep_learning",
+      "name": "Deep Learning",
+      "category": "AI/ML",
+      "subcategory": "Deep Learning",
+      "aliases": ["Deep Learning", "DL"],
+      "related_skills": ["neural_networks", "pytorch", "tensorflow"]
+    },
+    {
+      "id": "scikit_learn",
+      "name": "Scikit-learn",
+      "category": "AI/ML",
+      "subcategory": "Machine Learning Framework",
+      "aliases": ["Scikit-learn", "sklearn", "Scikit Learn"],
+      "related_skills": ["python", "machine_learning"]
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch",
+      "category": "AI/ML",
+      "subcategory": "Deep Learning Framework",
+      "aliases": ["PyTorch", "Torch"],
+      "related_skills": ["deep_learning", "transformers"]
+    },
+    {
+      "id": "tensorflow",
+      "name": "TensorFlow",
+      "category": "AI/ML",
+      "subcategory": "Deep Learning Framework",
+      "aliases": ["TensorFlow", "Tensor Flow", "TF"],
+      "related_skills": ["deep_learning", "keras"]
+    },
+    {
+      "id": "nlp",
+      "name": "Natural Language Processing",
+      "category": "AI/ML",
+      "subcategory": "NLP",
+      "aliases": ["NLP", "Natural Language Processing"],
+      "related_skills": ["transformers", "llm", "text_classification"]
+    },
+    {
+      "id": "computer_vision",
+      "name": "Computer Vision",
+      "category": "AI/ML",
+      "subcategory": "Computer Vision",
+      "aliases": ["Computer Vision", "CV"],
+      "related_skills": ["opencv", "cnn", "object_detection"]
+    },
+
+    {
+      "id": "generative_ai",
+      "name": "Generative AI",
+      "category": "Generative AI",
+      "subcategory": "GenAI",
+      "aliases": ["Generative AI", "GenAI", "Gen AI"],
+      "related_skills": ["llm", "rag", "prompt_engineering", "ai_agents"]
+    },
+    {
+      "id": "llm",
+      "name": "Large Language Models",
+      "category": "Generative AI",
+      "subcategory": "LLM",
+      "aliases": [
+        "LLM",
+        "LLMs",
+        "Large Language Model",
+        "Large Language Models"
+      ],
+      "related_skills": ["generative_ai", "transformers", "prompt_engineering", "rag"]
+    },
+    {
+      "id": "prompt_engineering",
+      "name": "Prompt Engineering",
+      "category": "Generative AI",
+      "subcategory": "LLM Applications",
+      "aliases": ["Prompt Engineering", "Prompt Design", "Prompting"],
+      "related_skills": ["llm", "generative_ai"]
+    },
+    {
+      "id": "rag",
+      "name": "Retrieval-Augmented Generation",
+      "category": "Generative AI",
+      "subcategory": "LLM Applications",
+      "aliases": [
+        "RAG",
+        "Retrieval Augmented Generation",
+        "Retrieval-Augmented Generation"
+      ],
+      "related_skills": ["llm", "embeddings", "vector_database", "retrieval"]
+    },
+    {
+      "id": "embeddings",
+      "name": "Embeddings",
+      "category": "Generative AI",
+      "subcategory": "Representation Learning",
+      "aliases": ["Embeddings", "Vector Embeddings", "Text Embeddings"],
+      "related_skills": ["rag", "vector_database", "semantic_search"]
+    },
+    {
+      "id": "semantic_search",
+      "name": "Semantic Search",
+      "category": "Generative AI",
+      "subcategory": "Information Retrieval",
+      "aliases": ["Semantic Search", "Vector Search", "Meaning-Based Search"],
+      "related_skills": ["embeddings", "rag", "information_retrieval"]
+    },
+    {
+      "id": "ai_agents",
+      "name": "AI Agents",
+      "category": "Generative AI",
+      "subcategory": "Agents",
+      "aliases": ["AI Agents", "AI Agent", "LLM Agents", "Agentic AI"],
+      "related_skills": ["llm", "tool_calling", "rag"]
+    },
+    {
+      "id": "langchain",
+      "name": "LangChain",
+      "category": "Generative AI",
+      "subcategory": "LLM Framework",
+      "aliases": ["LangChain"],
+      "related_skills": ["llm", "rag", "ai_agents"]
+    },
+    {
+      "id": "llamaindex",
+      "name": "LlamaIndex",
+      "category": "Generative AI",
+      "subcategory": "LLM Framework",
+      "aliases": ["LlamaIndex", "Llama Index"],
+      "related_skills": ["llm", "rag", "vector_database"]
+    },
+
+    {
+      "id": "pandas",
+      "name": "Pandas",
+      "category": "Data Science",
+      "subcategory": "Data Analysis",
+      "aliases": ["Pandas", "Python Pandas"],
+      "related_skills": ["python", "numpy", "data_analysis"]
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "category": "Data Science",
+      "subcategory": "Scientific Computing",
+      "aliases": ["NumPy", "Numpy"],
+      "related_skills": ["python", "pandas", "statistics"]
+    },
+    {
+      "id": "statistics",
+      "name": "Statistics",
+      "category": "Data Science",
+      "subcategory": "Statistics",
+      "aliases": ["Statistics", "Statistical Analysis"],
+      "related_skills": ["probability", "machine_learning", "data_analysis"]
+    },
+    {
+      "id": "data_analysis",
+      "name": "Data Analysis",
+      "category": "Data Science",
+      "subcategory": "Analytics",
+      "aliases": ["Data Analysis", "Data Analytics"],
+      "related_skills": ["pandas", "sql", "statistics"]
+    },
+    {
+      "id": "feature_engineering",
+      "name": "Feature Engineering",
+      "category": "Data Science",
+      "subcategory": "Machine Learning",
+      "aliases": ["Feature Engineering", "Feature Extraction"],
+      "related_skills": ["machine_learning", "pandas", "scikit_learn"]
+    },
+
+    {
+      "id": "docker",
+      "name": "Docker",
+      "category": "DevOps",
+      "subcategory": "Containers",
+      "aliases": ["Docker", "Docker Containers", "Containerization"],
+      "related_skills": ["kubernetes", "docker_compose", "linux"]
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "category": "DevOps",
+      "subcategory": "Container Orchestration",
+      "aliases": ["Kubernetes", "K8s"],
+      "related_skills": ["docker", "helm", "cloud_computing"]
+    },
+    {
+      "id": "docker_compose",
+      "name": "Docker Compose",
+      "category": "DevOps",
+      "subcategory": "Containers",
+      "aliases": ["Docker Compose", "Docker-Compose"],
+      "related_skills": ["docker"]
+    },
+    {
+      "id": "ci_cd",
+      "name": "CI/CD",
+      "category": "DevOps",
+      "subcategory": "Automation",
+      "aliases": ["CI/CD", "CI CD", "Continuous Integration", "Continuous Deployment"],
+      "related_skills": ["github_actions", "jenkins", "docker"]
+    },
+    {
+      "id": "github_actions",
+      "name": "GitHub Actions",
+      "category": "DevOps",
+      "subcategory": "CI/CD",
+      "aliases": ["GitHub Actions", "Github Actions"],
+      "related_skills": ["ci_cd", "git", "docker"]
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "category": "DevOps",
+      "subcategory": "Infrastructure as Code",
+      "aliases": ["Terraform", "HashiCorp Terraform"],
+      "related_skills": ["aws", "kubernetes", "infrastructure_as_code"]
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "category": "DevOps",
+      "subcategory": "Operating Systems",
+      "aliases": ["Linux", "Ubuntu", "Debian", "CentOS"],
+      "related_skills": ["shell_scripting", "docker", "networking"]
+    },
+
+    {
+      "id": "aws",
+      "name": "Amazon Web Services",
+      "category": "Cloud",
+      "subcategory": "AWS",
+      "aliases": ["AWS", "Amazon Web Services"],
+      "related_skills": ["ec2", "s3", "rds", "ecs", "lambda"]
+    },
+    {
+      "id": "azure",
+      "name": "Microsoft Azure",
+      "category": "Cloud",
+      "subcategory": "Azure",
+      "aliases": ["Azure", "Microsoft Azure"],
+      "related_skills": ["azure_functions", "azure_storage"]
+    },
+    {
+      "id": "gcp",
+      "name": "Google Cloud Platform",
+      "category": "Cloud",
+      "subcategory": "GCP",
+      "aliases": ["GCP", "Google Cloud", "Google Cloud Platform"],
+      "related_skills": ["compute_engine", "cloud_storage", "bigquery"]
+    },
+    {
+      "id": "s3",
+      "name": "Amazon S3",
+      "category": "Cloud",
+      "subcategory": "AWS Storage",
+      "aliases": ["S3", "Amazon S3", "AWS S3"],
+      "related_skills": ["aws", "cloud_storage"]
+    },
+    {
+      "id": "ec2",
+      "name": "Amazon EC2",
+      "category": "Cloud",
+      "subcategory": "AWS Compute",
+      "aliases": ["EC2", "Amazon EC2", "AWS EC2"],
+      "related_skills": ["aws", "linux"]
+    },
+
+    {
+      "id": "git",
+      "name": "Git",
+      "category": "Developer Tools",
+      "subcategory": "Version Control",
+      "aliases": ["Git", "Git SCM"],
+      "related_skills": ["github", "gitlab", "ci_cd"]
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "category": "Developer Tools",
+      "subcategory": "Version Control",
+      "aliases": ["GitHub", "Github"],
+      "related_skills": ["git", "github_actions"]
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "category": "Developer Tools",
+      "subcategory": "Version Control",
+      "aliases": ["GitLab", "Gitlab"],
+      "related_skills": ["git", "ci_cd"]
+    },
+    {
+      "id": "jira",
+      "name": "Jira",
+      "category": "Developer Tools",
+      "subcategory": "Project Management",
+      "aliases": ["Jira", "JIRA", "Atlassian Jira"],
+      "related_skills": ["agile", "scrum"]
+    },
+
+    {
+      "id": "celery",
+      "name": "Celery",
+      "category": "Backend",
+      "subcategory": "Task Queue",
+      "aliases": ["Celery", "Celery Task Queue"],
+      "related_skills": ["redis", "python", "async_processing"]
+    },
+    {
+      "id": "rabbitmq",
+      "name": "RabbitMQ",
+      "category": "Backend",
+      "subcategory": "Message Broker",
+      "aliases": ["RabbitMQ", "Rabbit MQ"],
+      "related_skills": ["message_queues", "celery"]
+    },
+    {
+      "id": "kafka",
+      "name": "Apache Kafka",
+      "category": "Data Engineering",
+      "subcategory": "Streaming",
+      "aliases": ["Kafka", "Apache Kafka"],
+      "related_skills": ["event_streaming", "distributed_systems"]
+    },
+
+    {
+      "id": "pdf_processing",
+      "name": "PDF Processing",
+      "category": "Document AI",
+      "subcategory": "Document Processing",
+      "aliases": ["PDF Processing", "PDF Parsing", "PDF Extraction"],
+      "related_skills": ["document_ai", "ocr"]
+    },
+    {
+      "id": "ocr",
+      "name": "Optical Character Recognition",
+      "category": "Document AI",
+      "subcategory": "Document Processing",
+      "aliases": ["OCR", "Optical Character Recognition"],
+      "related_skills": ["document_ai", "pdf_processing"]
+    },
+    {
+      "id": "document_ai",
+      "name": "Document AI",
+      "category": "Document AI",
+      "subcategory": "AI Document Processing",
+      "aliases": ["Document AI", "Document Intelligence"],
+      "related_skills": ["ocr", "nlp", "information_extraction"]
+    },
+    {
+      "id": "information_extraction",
+      "name": "Information Extraction",
+      "category": "NLP",
+      "subcategory": "Information Extraction",
+      "aliases": ["Information Extraction", "IE"],
+      "related_skills": ["nlp", "named_entity_recognition", "document_ai"]
+    },
+    {
+      "id": "named_entity_recognition",
+      "name": "Named Entity Recognition",
+      "category": "NLP",
+      "subcategory": "Information Extraction",
+      "aliases": ["NER", "Named Entity Recognition"],
+      "related_skills": ["nlp", "information_extraction"]
+    },
+
+    {
+      "id": "speech_to_text",
+      "name": "Speech-to-Text",
+      "category": "Voice AI",
+      "subcategory": "Speech Recognition",
+      "aliases": ["Speech-to-Text", "Speech Recognition", "STT", "ASR"],
+      "related_skills": ["voice_ai", "audio_processing"]
+    },
+    {
+      "id": "text_to_speech",
+      "name": "Text-to-Speech",
+      "category": "Voice AI",
+      "subcategory": "Speech Synthesis",
+      "aliases": ["Text-to-Speech", "TTS", "Speech Synthesis"],
+      "related_skills": ["voice_ai", "audio_processing"]
+    },
+    {
+      "id": "voice_ai",
+      "name": "Voice AI",
+      "category": "Voice AI",
+      "subcategory": "Conversational AI",
+      "aliases": ["Voice AI", "Voice Assistant", "Conversational Voice AI"],
+      "related_skills": ["speech_to_text", "text_to_speech", "llm"]
+    },
+
+    {
+      "id": "agile",
+      "name": "Agile",
+      "category": "Methodologies",
+      "subcategory": "Software Development",
+      "aliases": ["Agile", "Agile Methodology"],
+      "related_skills": ["scrum", "jira"]
+    },
+    {
+      "id": "scrum",
+      "name": "Scrum",
+      "category": "Methodologies",
+      "subcategory": "Agile",
+      "aliases": ["Scrum", "Scrum Framework"],
+      "related_skills": ["agile", "jira"]
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "category": "Soft Skills",
+      "subcategory": "Interpersonal",
+      "aliases": ["Communication", "Communication Skills", "Verbal Communication"],
+      "related_skills": ["teamwork", "presentation"]
+    },
+    {
+      "id": "problem_solving",
+      "name": "Problem Solving",
+      "category": "Soft Skills",
+      "subcategory": "Cognitive",
+      "aliases": ["Problem Solving", "Problem-Solving"],
+      "related_skills": ["critical_thinking", "algorithms"]
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "category": "Soft Skills",
+      "subcategory": "Management",
+      "aliases": ["Leadership", "Team Leadership"],
+      "related_skills": ["team_management", "communication"]
+    }
+  ]
+}

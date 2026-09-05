@@ -1,0 +1,725 @@
+{
+  "version": "1.0",
+  "job_roles": [
+    {
+      "id": "software_engineer",
+      "name": "Software Engineer",
+      "department": "Engineering",
+      "category": "Software Development",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead",
+        "staff"
+      ],
+      "aliases": [
+        "Software Engineer",
+        "Software Developer",
+        "Application Developer",
+        "Software Programmer",
+        "SDE"
+      ],
+      "related_roles": [
+        "backend_engineer",
+        "frontend_engineer",
+        "full_stack_engineer"
+      ],
+      "core_skills": [
+        "Python",
+        "Java",
+        "C++",
+        "Git",
+        "Data Structures",
+        "Algorithms",
+        "SQL",
+        "REST APIs"
+      ]
+    },
+    {
+      "id": "backend_engineer",
+      "name": "Backend Engineer",
+      "department": "Engineering",
+      "category": "Software Development",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead",
+        "staff"
+      ],
+      "aliases": [
+        "Backend Engineer",
+        "Backend Developer",
+        "Back End Developer",
+        "Server-Side Developer",
+        "API Developer"
+      ],
+      "related_roles": [
+        "software_engineer",
+        "full_stack_engineer",
+        "api_engineer"
+      ],
+      "core_skills": [
+        "Python",
+        "Java",
+        "Node.js",
+        "FastAPI",
+        "Django",
+        "REST APIs",
+        "SQL",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ]
+    },
+    {
+      "id": "frontend_engineer",
+      "name": "Frontend Engineer",
+      "department": "Engineering",
+      "category": "Software Development",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Frontend Engineer",
+        "Frontend Developer",
+        "Front End Developer",
+        "UI Developer",
+        "Web Developer"
+      ],
+      "related_roles": [
+        "software_engineer",
+        "full_stack_engineer",
+        "ui_engineer"
+      ],
+      "core_skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Vue",
+        "Angular",
+        "REST APIs",
+        "Git"
+      ]
+    },
+    {
+      "id": "full_stack_engineer",
+      "name": "Full Stack Engineer",
+      "department": "Engineering",
+      "category": "Software Development",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Full Stack Engineer",
+        "Full Stack Developer",
+        "Full-Stack Developer",
+        "Web Application Developer"
+      ],
+      "related_roles": [
+        "backend_engineer",
+        "frontend_engineer",
+        "software_engineer"
+      ],
+      "core_skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Python",
+        "SQL",
+        "REST APIs",
+        "Docker",
+        "Git"
+      ]
+    },
+    {
+      "id": "data_scientist",
+      "name": "Data Scientist",
+      "department": "Data",
+      "category": "Data Science",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Data Scientist",
+        "Data Science Specialist",
+        "Applied Data Scientist"
+      ],
+      "related_roles": [
+        "ml_engineer",
+        "data_analyst",
+        "research_scientist"
+      ],
+      "core_skills": [
+        "Python",
+        "Statistics",
+        "Machine Learning",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "SQL",
+        "Data Visualization",
+        "Feature Engineering"
+      ]
+    },
+    {
+      "id": "ml_engineer",
+      "name": "Machine Learning Engineer",
+      "department": "AI/ML",
+      "category": "Machine Learning",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead",
+        "staff"
+      ],
+      "aliases": [
+        "Machine Learning Engineer",
+        "ML Engineer",
+        "Machine Learning Developer",
+        "ML Developer",
+        "Applied ML Engineer"
+      ],
+      "related_roles": [
+        "data_scientist",
+        "ai_engineer",
+        "research_scientist"
+      ],
+      "core_skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "Scikit-learn",
+        "PyTorch",
+        "TensorFlow",
+        "NumPy",
+        "Pandas",
+        "MLflow",
+        "Docker"
+      ]
+    },
+    {
+      "id": "ai_engineer",
+      "name": "AI Engineer",
+      "department": "AI/ML",
+      "category": "Artificial Intelligence",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "AI Engineer",
+        "Artificial Intelligence Engineer",
+        "AI Developer",
+        "Applied AI Engineer"
+      ],
+      "related_roles": [
+        "ml_engineer",
+        "genai_engineer",
+        "software_engineer"
+      ],
+      "core_skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "LLMs",
+        "NLP",
+        "PyTorch",
+        "TensorFlow",
+        "APIs",
+        "Docker"
+      ]
+    },
+    {
+      "id": "genai_engineer",
+      "name": "Generative AI Engineer",
+      "department": "AI/ML",
+      "category": "Generative AI",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Generative AI Engineer",
+        "GenAI Engineer",
+        "Gen AI Engineer",
+        "Generative AI Developer",
+        "GenAI Developer",
+        "LLM Engineer"
+      ],
+      "related_roles": [
+        "ai_engineer",
+        "ml_engineer",
+        "nlp_engineer"
+      ],
+      "core_skills": [
+        "Python",
+        "LLMs",
+        "Prompt Engineering",
+        "RAG",
+        "Embeddings",
+        "Vector Databases",
+        "LangChain",
+        "Agents",
+        "NLP",
+        "APIs"
+      ]
+    },
+    {
+      "id": "nlp_engineer",
+      "name": "NLP Engineer",
+      "department": "AI/ML",
+      "category": "Natural Language Processing",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "NLP Engineer",
+        "Natural Language Processing Engineer",
+        "NLP Developer",
+        "Language AI Engineer"
+      ],
+      "related_roles": [
+        "ai_engineer",
+        "ml_engineer",
+        "genai_engineer"
+      ],
+      "core_skills": [
+        "Python",
+        "NLP",
+        "Transformers",
+        "BERT",
+        "LLMs",
+        "Tokenization",
+        "Text Classification",
+        "Named Entity Recognition",
+        "Embeddings"
+      ]
+    },
+    {
+      "id": "computer_vision_engineer",
+      "name": "Computer Vision Engineer",
+      "department": "AI/ML",
+      "category": "Computer Vision",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Computer Vision Engineer",
+        "Computer Vision Developer",
+        "CV Engineer",
+        "Vision AI Engineer"
+      ],
+      "related_roles": [
+        "ml_engineer",
+        "ai_engineer",
+        "deep_learning_engineer"
+      ],
+      "core_skills": [
+        "Python",
+        "Computer Vision",
+        "OpenCV",
+        "PyTorch",
+        "TensorFlow",
+        "CNN",
+        "Object Detection",
+        "Image Classification",
+        "Deep Learning"
+      ]
+    },
+    {
+      "id": "data_engineer",
+      "name": "Data Engineer",
+      "department": "Data",
+      "category": "Data Engineering",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Data Engineer",
+        "Big Data Engineer",
+        "Data Platform Engineer"
+      ],
+      "related_roles": [
+        "analytics_engineer",
+        "ml_engineer",
+        "data_scientist"
+      ],
+      "core_skills": [
+        "Python",
+        "SQL",
+        "ETL",
+        "Data Pipelines",
+        "Apache Spark",
+        "Kafka",
+        "Airflow",
+        "Data Warehousing",
+        "AWS",
+        "Docker"
+      ]
+    },
+    {
+      "id": "data_analyst",
+      "name": "Data Analyst",
+      "department": "Data",
+      "category": "Analytics",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior"
+      ],
+      "aliases": [
+        "Data Analyst",
+        "Business Data Analyst",
+        "Reporting Analyst",
+        "BI Analyst"
+      ],
+      "related_roles": [
+        "data_scientist",
+        "business_analyst",
+        "analytics_engineer"
+      ],
+      "core_skills": [
+        "SQL",
+        "Excel",
+        "Python",
+        "Pandas",
+        "Statistics",
+        "Power BI",
+        "Tableau",
+        "Data Visualization"
+      ]
+    },
+    {
+      "id": "devops_engineer",
+      "name": "DevOps Engineer",
+      "department": "Infrastructure",
+      "category": "DevOps",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "DevOps Engineer",
+        "DevOps Developer",
+        "DevOps Specialist",
+        "Platform Engineer"
+      ],
+      "related_roles": [
+        "cloud_engineer",
+        "sre",
+        "infrastructure_engineer"
+      ],
+      "core_skills": [
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "GitHub Actions",
+        "Jenkins",
+        "Terraform",
+        "AWS",
+        "Monitoring"
+      ]
+    },
+    {
+      "id": "cloud_engineer",
+      "name": "Cloud Engineer",
+      "department": "Infrastructure",
+      "category": "Cloud Computing",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Cloud Engineer",
+        "Cloud Developer",
+        "Cloud Infrastructure Engineer",
+        "Cloud Architect"
+      ],
+      "related_roles": [
+        "devops_engineer",
+        "sre",
+        "solutions_architect"
+      ],
+      "core_skills": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Linux",
+        "Networking",
+        "Cloud Security"
+      ]
+    },
+    {
+      "id": "sre",
+      "name": "Site Reliability Engineer",
+      "department": "Infrastructure",
+      "category": "Reliability Engineering",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "staff"
+      ],
+      "aliases": [
+        "Site Reliability Engineer",
+        "SRE",
+        "Reliability Engineer"
+      ],
+      "related_roles": [
+        "devops_engineer",
+        "cloud_engineer",
+        "platform_engineer"
+      ],
+      "core_skills": [
+        "Linux",
+        "Kubernetes",
+        "Docker",
+        "Terraform",
+        "Monitoring",
+        "Prometheus",
+        "Grafana",
+        "CI/CD",
+        "AWS"
+      ]
+    },
+    {
+      "id": "cybersecurity_engineer",
+      "name": "Cybersecurity Engineer",
+      "department": "Security",
+      "category": "Cybersecurity",
+      "seniority_levels": [
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Cybersecurity Engineer",
+        "Security Engineer",
+        "Information Security Engineer",
+        "Cyber Security Specialist"
+      ],
+      "related_roles": [
+        "security_analyst",
+        "cloud_security_engineer"
+      ],
+      "core_skills": [
+        "Network Security",
+        "Linux",
+        "Cryptography",
+        "IAM",
+        "SIEM",
+        "Vulnerability Assessment",
+        "Penetration Testing",
+        "Cloud Security"
+      ]
+    },
+    {
+      "id": "qa_engineer",
+      "name": "QA Engineer",
+      "department": "Quality Engineering",
+      "category": "Software Testing",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "QA Engineer",
+        "Quality Assurance Engineer",
+        "Test Engineer",
+        "Software Test Engineer"
+      ],
+      "related_roles": [
+        "automation_engineer",
+        "software_engineer"
+      ],
+      "core_skills": [
+        "Software Testing",
+        "Test Automation",
+        "Selenium",
+        "PyTest",
+        "API Testing",
+        "SQL",
+        "CI/CD",
+        "Git"
+      ]
+    },
+    {
+      "id": "product_manager",
+      "name": "Product Manager",
+      "department": "Product",
+      "category": "Product Management",
+      "seniority_levels": [
+        "associate",
+        "mid",
+        "senior",
+        "lead",
+        "director"
+      ],
+      "aliases": [
+        "Product Manager",
+        "Technical Product Manager",
+        "Product Owner",
+        "Digital Product Manager"
+      ],
+      "related_roles": [
+        "technical_product_manager",
+        "project_manager"
+      ],
+      "core_skills": [
+        "Product Strategy",
+        "Roadmapping",
+        "Market Research",
+        "Agile",
+        "Scrum",
+        "Stakeholder Management",
+        "Product Analytics"
+      ]
+    },
+    {
+      "id": "business_analyst",
+      "name": "Business Analyst",
+      "department": "Business",
+      "category": "Business Analysis",
+      "seniority_levels": [
+        "entry",
+        "junior",
+        "mid",
+        "senior",
+        "lead"
+      ],
+      "aliases": [
+        "Business Analyst",
+        "Business Systems Analyst",
+        "IT Business Analyst",
+        "Functional Analyst"
+      ],
+      "related_roles": [
+        "data_analyst",
+        "product_manager",
+        "systems_analyst"
+      ],
+      "core_skills": [
+        "Requirements Analysis",
+        "SQL",
+        "Business Process Modeling",
+        "Excel",
+        "Stakeholder Management",
+        "Agile",
+        "JIRA"
+      ]
+    },
+    {
+      "id": "research_scientist",
+      "name": "Research Scientist",
+      "department": "Research",
+      "category": "Research",
+      "seniority_levels": [
+        "researcher",
+        "senior",
+        "lead",
+        "principal"
+      ],
+      "aliases": [
+        "Research Scientist",
+        "AI Research Scientist",
+        "ML Research Scientist",
+        "Research Engineer"
+      ],
+      "related_roles": [
+        "ml_engineer",
+        "ai_engineer",
+        "data_scientist"
+      ],
+      "core_skills": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "Mathematics",
+        "Statistics",
+        "Research",
+        "PyTorch",
+        "TensorFlow",
+        "Scientific Computing"
+      ]
+    },
+    {
+      "id": "ai_research_scientist",
+      "name": "AI Research Scientist",
+      "department": "Research",
+      "category": "Artificial Intelligence Research",
+      "seniority_levels": [
+        "researcher",
+        "senior",
+        "principal"
+      ],
+      "aliases": [
+        "AI Research Scientist",
+        "Artificial Intelligence Research Scientist",
+        "AI Researcher"
+      ],
+      "related_roles": [
+        "research_scientist",
+        "ml_engineer",
+        "ai_engineer"
+      ],
+      "core_skills": [
+        "Machine Learning",
+        "Deep Learning",
+        "LLMs",
+        "NLP",
+        "Computer Vision",
+        "PyTorch",
+        "Mathematics",
+        "Statistics",
+        "Research"
+      ]
+    }
+  ]
+}
