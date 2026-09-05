@@ -1,0 +1,193 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  scrape_timeout: 10s
+
+  external_labels:
+    project: "ai-resume-screening-interview-system"
+    environment: "production"
+
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - "alertmanager:9093"
+
+# Alert rules
+rule_files:
+  - "/etc/prometheus/alerts/*.yml"
+
+# Scrape configurations
+scrape_configs:
+
+  # ==========================================
+  # Prometheus
+  # ==========================================
+  - job_name: "prometheus"
+
+    static_configs:
+      - targets:
+          - "prometheus:9090"
+
+    scrape_interval: 15s
+
+  # ==========================================
+  # FastAPI Backend
+  # ==========================================
+  - job_name: "backend"
+
+    metrics_path: "/metrics"
+
+    static_configs:
+      - targets:
+          - "backend:8000"
+
+        labels:
+          service: "fastapi"
+          component: "backend"
+
+    scrape_interval: 15s
+
+  # ==========================================
+  # Celery Workers
+  # ==========================================
+  - job_name: "celery"
+
+    static_configs:
+      - targets:
+          - "worker:8001"
+
+        labels:
+          service: "celery"
+          component: "worker"
+
+    scrape_interval: 15s
+
+  # ==========================================
+  # PostgreSQL
+  # ==========================================
+  - job_name: "postgres"
+
+    static_configs:
+      - targets:
+          - "postgres-exporter:9187"
+
+        labels:
+          service: "postgresql"
+          component: "database"
+
+    scrape_interval: 30s
+
+  # ==========================================
+  # Redis
+  # ==========================================
+  - job_name: "redis"
+
+    static_configs:
+      - targets:
+          - "redis-exporter:9121"
+
+        labels:
+          service: "redis"
+          component: "cache"
+
+    scrape_interval: 30s
+
+  # ==========================================
+  # Node Exporter
+  # ==========================================
+  - job_name: "node"
+
+    static_configs:
+      - targets:
+          - "node-exporter:9100"
+
+        labels:
+          service: "node"
+          component: "system"
+
+    scrape_interval: 15s
+
+  # ==========================================
+  # Nginx
+  # ==========================================
+  - job_name: "nginx"
+
+    metrics_path: "/metrics"
+
+    static_configs:
+      - targets:
+          - "nginx-exporter:9113"
+
+        labels:
+          service: "nginx"
+          component: "reverse-proxy"
+
+    scrape_interval: 15s
+
+  # ==========================================
+  # AI Resume Processing
+  # ==========================================
+  - job_name: "ai-processing"
+
+    metrics_path: "/metrics"
+
+    static_configs:
+      - targets:
+          - "backend:8000"
+
+        labels:
+          service: "ai-processing"
+          component: "ai"
+
+    scrape_interval: 30s
+
+  # ==========================================
+  # Interview Engine
+  # ==========================================
+  - job_name: "interview-engine"
+
+    metrics_path: "/metrics"
+
+    static_configs:
+      - targets:
+          - "backend:8000"
+
+        labels:
+          service: "interview-engine"
+          component: "interview"
+
+    scrape_interval: 30s
+
+  # ==========================================
+  # RAG / GenAI
+  # ==========================================
+  - job_name: "genai"
+
+    metrics_path: "/metrics"
+
+    static_configs:
+      - targets:
+          - "backend:8000"
+
+        labels:
+          service: "genai"
+          component: "llm-rag"
+
+    scrape_interval: 30s
+
+  # ==========================================
+  # AWS ECS / CloudWatch Exporter
+  # ==========================================
+  - job_name: "aws"
+
+    static_configs:
+      - targets:
+          - "cloudwatch-exporter:9106"
+
+        labels:
+          service: "aws"
+          component: "cloudwatch"
+
+    scrape_interval: 60s
